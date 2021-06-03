@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DataStructuresAndAlgo.Array;
 
 namespace DataStructuresAndAlgo
@@ -7,7 +8,10 @@ namespace DataStructuresAndAlgo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ArrayImplementation ai = new ArrayImplementation();
+
+            ai.main();
+            
 
         }
     }
