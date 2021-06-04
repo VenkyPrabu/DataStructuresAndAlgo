@@ -13,11 +13,11 @@ namespace DataStructuresAndAlgo.Array
             //1. Create Array with user provided length - Done
             //2. Print Array - O(n) - Done
             //3. Add at End - O(1) - Done
-            //4. Add at Start - O(n)
+            //4. Add at Start - O(n) -Done
             //5. Add at a given Index- O(n) - Done
-            //6. Delete at End -O(1)
-            //7. Delete at Start -O(n)
-            //8. Delete at a given Index -O(n)
+            //6. Delete at End -O(1) - Done
+            //7. Delete at Start -O(n) - Done
+            //8. Delete at a given Index -O(n) - Done
             //9. Search - Doing only Linear search here
             //11. Find Min - O(n)
             //12. Reverse using auxillary array - O(n)
@@ -43,19 +43,30 @@ namespace DataStructuresAndAlgo.Array
             //5. Abdul Badri - Student Challenges       
 
             populateInitialArray();
-            printArray();
 
             insertAtIndex(10,2);
+
+            insertAtStart(99);
+
+            printArray();
+
+            deleteAtIndex(2);
+
+            printArray();
+
+            deleteAtStart();
+
+            deleteAtEnd();
+
             printArray();
 
         }
 
         public void printArray()
         {
-            for(int i = 0; i < myarray.Length; i++)
+            for(int i = 0; i < currLength; i++)
             {
                 Console.WriteLine("Array value at index {0} is {1}",i, myarray[i]);
-                Console.WriteLine("------------------------------------");
             }
 
             Console.WriteLine("The length of the array : {0}", currLength);
@@ -77,20 +88,23 @@ namespace DataStructuresAndAlgo.Array
                 insertAtEnd(Convert.ToInt32(value));
             }          
         }
-
         public void insertAtEnd(int value)
         {
             Console.WriteLine("------insertAtEnd---------");
+            if(currLength == sizeOfArray)
+            {
+                Console.WriteLine("Array is full and cannot insert any more elements");
+                return;
+            }
             myarray[currLength] = value;
             currLength++;
         }
-
         public void insertAtIndex(int value, int index)
         {
             Console.WriteLine("------insertAtIndex---------");
-            if(index > sizeOfArray)
+            if(index < 0 || index > sizeOfArray)
             {
-                Console.WriteLine("Given index is more than the size of the array");
+                Console.WriteLine("Given index is more than the size of the array Or Wrong index value");
                 return;
             }
 
@@ -109,7 +123,54 @@ namespace DataStructuresAndAlgo.Array
 
             currLength++;
         }
+        public void insertAtStart(int value)
+        {
+            //insert at start is the same as insertAtIndex but with the index always as 0
+            insertAtIndex(value,0);
+        }
+        public void deleteAtIndex(int index)
+        {
+            Console.WriteLine("------deleteAtIndex---------");
+            if(index >= 0 && index <= sizeOfArray)
+            {
+                int x = myarray[index];
 
+                for(int i = index; i < currLength-1; i++)
+                {
+                    myarray[i] = myarray[i+1];
+                }
 
+                myarray[currLength-1] = -100;
+                currLength--;
+            }
+            else
+            {
+                if(currLength == 0)
+                {
+                    Console.WriteLine("No element to delete");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong index value");
+                    return;
+                }
+            }
+        }
+        public void deleteAtStart()
+        {
+            deleteAtIndex(0);
+        }
+
+        public void deleteAtEnd()
+        {
+            if(currLength == 0)
+            {
+                Console.WriteLine("No element to delete");
+                return;
+            }
+            myarray[currLength-1] = -100;
+            currLength--;
+        }
     }
 }
