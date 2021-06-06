@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DataStructuresAndAlgo.Array;
+using DataStructuresAndAlgo.LinkedList;
 
 namespace DataStructuresAndAlgo
 {
@@ -8,9 +9,12 @@ namespace DataStructuresAndAlgo
     {
         static void Main(string[] args)
         {
-            ArrayImplementation ai = new ArrayImplementation();
+            // ArrayImplementation ai = new ArrayImplementation();
+            // ai.main();
 
-            ai.main();
+            LinkedListMain ll = new LinkedListMain();
+            ll.main();
+
             
 
         }

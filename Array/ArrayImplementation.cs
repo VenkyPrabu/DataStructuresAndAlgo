@@ -82,19 +82,11 @@ namespace DataStructuresAndAlgo.Array
             // IsSortedArray(new int[5]{1,9,3,4,5});
             // ArrangeNegativeOnLeftPositiveOnRight();
             // MergeSortedArray(new int[5]{4,7,9,11,22}, new int[6]{1,2,3,23,55,99});
-            #endregion
-
-            
-
-            
-
-
-            
-            
             //UnionArray(new int[5]{3,4,5,6,10},new int[5]{2,4,5,7,12});
             //IntersectionArray(new int[5]{3,4,5,6,10}, new int[5]{2,4,5,7,12});
-            DifferenceArray(new int[6]{1,2,3,4,5,9},new int[5]{2,3,6,7,8});
+            //DifferenceArray(new int[6]{1,2,3,4,5,9},new int[5]{2,3,6,7,8});
             //populateInitialArray();
+            #endregion
 
         }
 
