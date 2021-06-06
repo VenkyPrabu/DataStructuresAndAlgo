@@ -5,7 +5,7 @@ namespace DataStructuresAndAlgo.LinkedList
         #region ToDo
         //1. Add at head - Done
         //2. Add at tail - Done
-        //3. Add at index
+        //3. Add at index - Done
         //4. Delete at head
         //5. delete at tail
         //6. delete at index
@@ -36,6 +36,7 @@ namespace DataStructuresAndAlgo.LinkedList
     public class SinglyLinkedList
     {
         public Node Head;
+        public Node Tail;
         public SinglyLinkedList()
         {
             Head = null;
@@ -43,6 +44,7 @@ namespace DataStructuresAndAlgo.LinkedList
 
         public void main()
         {
+            #region calls
             AddAtHead(1);
             AddAtTail(2);
             AddAtHead(21);
@@ -57,7 +59,7 @@ namespace DataStructuresAndAlgo.LinkedList
             //Sum();
             //Console.WriteLine("Sum of all elements SumRecursive : {0}", SumRecursive(Head));
             //Max();
-            Display();
+            //Display();
             //Search(2);
             //Display();
 
@@ -70,9 +72,16 @@ namespace DataStructuresAndAlgo.LinkedList
             // {
             //     Console.WriteLine("The element NOT found");
             // }
-
-            AddAtIndex(89,7);
+            #endregion
+            // AddAtIndex(1,0);
+            // AddAtIndex(2,1);
+            // AddAtIndex(3,2);
+            // AddAtIndex(4,3);
+            // AddAtIndex(5,4);
+             AddAtIndex(99,6);
+             AddAtTail(100);
             Display();
+            Count();
 
         }
 
@@ -82,6 +91,7 @@ namespace DataStructuresAndAlgo.LinkedList
             if(Head == null)
             {
                 Head = new Node(value);
+                Tail = Head;
                 return;
             }
             Node newNode = new Node(value);
@@ -94,14 +104,22 @@ namespace DataStructuresAndAlgo.LinkedList
             if(Head == null)
             {
                 Head = new Node(value);
+                Tail = Head;
                 return;
             }
-            Node temp = Head;
-            while(temp.next != null)
-            {
-                temp = temp.next;
-            }
-            temp.next = new Node(value);
+            //O(n) - without Tail
+            // Node temp = Head;
+            // while(temp.next != null)
+            // {
+            //     temp = temp.next;
+            // }
+            //temp.next = new Node(value);
+
+            //O(1) - With Tail Node
+            Node newNode = new Node(value);
+            Tail.next = newNode;
+            Tail = newNode;
+
         }
 
         public void AddAtIndex(int value, int index)
@@ -111,16 +129,10 @@ namespace DataStructuresAndAlgo.LinkedList
                 AddAtHead(value);
                 return;
             }
-            else if(Count() == index)
-            {
-                Console.WriteLine("AddAtTail");
-                AddAtTail(value);
-                return;
-            }
             else
             {
                 Node temp = Head;
-                for(int i = 0; i < index-1; i++)
+                for(int i = 0; i < index-1 && temp != null; i++)
                 {
                     temp = temp.next;
                 }
@@ -133,6 +145,12 @@ namespace DataStructuresAndAlgo.LinkedList
                 Node newNode = new Node(value);
                 newNode.next = temp.next;
                 temp.next = newNode;
+
+                if(Count()-1 == index)
+                {
+                    Tail.next = newNode;
+                    Tail = newNode;
+                }
             }
         }
         public void Display()
