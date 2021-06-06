@@ -6,18 +6,18 @@ namespace DataStructuresAndAlgo.LinkedList
         //1. Add at head - Done
         //2. Add at tail - Done
         //3. Add at index - Done
-        //4. Delete at head
-        //5. delete at tail
-        //6. delete at index
+        //4. Delete at head - Done
+        //5. delete at tail - Done
+        //6. delete at index - Done
         //7. print node - Done
         //8. print node Recursively - Done
-        //9. Get value at an Index
+        //9. Get value at an Index - Done
         //10. Count number of nodes - Done
-        //11. Max value in LL
+        //11. Max value in LL - Done
         //12. Sum off all values - Done
-        //13. Search
-        //14. Insert in a Sorted LL
-        //15. Insert in a Sorted LL - Two pointer Apporach
+        //13. Search - Done
+        //14. Insert in a Sorted LL - Done
+        //15. Insert in a Sorted LL - Two pointer Apporach - Done
         //16. Check if LL is sorted
         //17. Remove Duplicates from Sorted LL
         //18. Reverse a Linked List
@@ -45,12 +45,12 @@ namespace DataStructuresAndAlgo.LinkedList
         public void main()
         {
             #region calls
-            AddAtHead(1);
-            AddAtTail(2);
-            AddAtHead(21);
-            AddAtTail(5);
-            AddAtTail(9);
-            AddAtTail(12);
+            // AddAtHead(1);
+            // AddAtTail(2);
+            // AddAtHead(21);
+            // AddAtTail(5);
+            // AddAtTail(9);
+            // AddAtTail(12);
             // Display();
             // DisplayRecursive(Head);
             //Count();
@@ -72,16 +72,42 @@ namespace DataStructuresAndAlgo.LinkedList
             // {
             //     Console.WriteLine("The element NOT found");
             // }
-            #endregion
             // AddAtIndex(1,0);
             // AddAtIndex(2,1);
             // AddAtIndex(3,2);
             // AddAtIndex(4,3);
             // AddAtIndex(5,4);
-             AddAtIndex(99,6);
-             AddAtTail(100);
-            Display();
-            Count();
+
+            // AddAtHead(1);
+            // AddAtTail(2);
+            // AddAtHead(21);
+            // AddAtTail(5);
+            // AddAtTail(9);
+            // AddAtTail(12);
+            // AddAtIndex(99,6);
+            // AddAtTail(100);
+            // Display();
+            // Count();
+            #endregion
+            //AddAtTail(1);
+            AddAtTail(3);
+            AddAtTail(7);
+            AddAtTail(9);
+            AddAtTail(15);
+            AddAtTail(20);
+            InsertInSortedLL2Pointer(21);
+            InsertInSortedLL2Pointer(1);
+            InsertInSortedLL2Pointer(0);
+            // DeleteAtHead();
+            // DeleteAtLast();
+            // Display();
+            // DeleteAtIndex(5);
+            // Display();
+            // Search(7);
+             Display();
+            GetValueAtIndex(2);
+            GetValueAtIndex(4);
+            GetValueAtIndex(7);
 
         }
 
@@ -98,7 +124,6 @@ namespace DataStructuresAndAlgo.LinkedList
             newNode.next = Head;
             Head = newNode;
         }
-
         public void AddAtTail(int value)
         {
             if(Head == null)
@@ -121,7 +146,6 @@ namespace DataStructuresAndAlgo.LinkedList
             Tail = newNode;
 
         }
-
         public void AddAtIndex(int value, int index)
         {
             if(index == 0)
@@ -153,6 +177,61 @@ namespace DataStructuresAndAlgo.LinkedList
                 }
             }
         }
+        public void DeleteAtHead()
+        {
+            if(Head == null)
+            {
+                Console.WriteLine("No elements in LL");
+                return;
+            }
+            Node nodeToDelete = Head;
+            Head = Head.next;
+            nodeToDelete = null;
+        }
+        public void DeleteAtLast()
+        {
+            if(Head == null)
+            {
+                Console.WriteLine("No elements in LL");
+                return;
+            }
+            if(Head.next == null)
+            {
+                Head = null;
+                return;
+            }
+
+            Node prev = Head;
+            Node curr = Head.next;
+            while(curr.next != null)
+            {
+                prev = curr;
+                curr = curr.next;
+            }
+
+            prev.next = null;
+        }
+        public void DeleteAtIndex(int index)
+        {
+            if (index == 0)
+            {
+                this.DeleteAtHead();
+                return;
+            }
+            Node prev = Head;
+            Node curr = Head.next;
+            for (int i = 0; i < index - 1 && curr != null; i++)
+            {
+                prev = curr;
+                curr = curr.next;
+            }
+            if (curr == null)
+            {
+                Console.WriteLine("Index greater than List size");
+                return;
+            }
+            prev.next = curr.next;
+        }
         public void Display()
         {
             if(Head == null)
@@ -169,7 +248,6 @@ namespace DataStructuresAndAlgo.LinkedList
             Console.Write("null");
             Console.WriteLine();
         }
-
         public void DisplayRecursive(Node node)
         {
             if(node == Head && node == null)
@@ -190,7 +268,6 @@ namespace DataStructuresAndAlgo.LinkedList
                 Console.WriteLine();
             }
         }
-
         public int Count()
         {
             int c = 0;
@@ -206,7 +283,6 @@ namespace DataStructuresAndAlgo.LinkedList
 
             return c;
         }
-
         public void CountRecursive(Node node, int count)
         {
             if(node != null)
@@ -221,7 +297,6 @@ namespace DataStructuresAndAlgo.LinkedList
                 Console.WriteLine();
             }
         }
-
         public int CountRecursive2(Node node)
         {
             if(node == null)
@@ -233,7 +308,6 @@ namespace DataStructuresAndAlgo.LinkedList
                 return CountRecursive2(node.next) + 1;
             }
         }
-
         public void Sum()
         {
             if(Head == null)
@@ -250,7 +324,6 @@ namespace DataStructuresAndAlgo.LinkedList
 
             Console.WriteLine("The Sum of all the elements: {0}", sum);
         }
-
         public int SumRecursive(Node node)
         {
             if(node == null)
@@ -262,7 +335,6 @@ namespace DataStructuresAndAlgo.LinkedList
                 return SumRecursive(node.next) + node.value;
             }
         }
-
         public void Max()
         {
             if(Head == null)
@@ -283,7 +355,6 @@ namespace DataStructuresAndAlgo.LinkedList
 
             Console.WriteLine("The max of all elements : {0}", max);
         }
-    
         public Node Search(int value)
         {
             if(Head == null)
@@ -312,7 +383,6 @@ namespace DataStructuresAndAlgo.LinkedList
 
             return null;
         }
-
         public Node SearchRecursive(Node node,int value)
         {
             if(Head == null)
@@ -332,6 +402,76 @@ namespace DataStructuresAndAlgo.LinkedList
             return SearchRecursive(node.next, value);
 
         }
+        
+        public void InsertInSortedLL(int value)
+        {
+            if(Head == null || value < Head.value)
+            {
+                AddAtHead(value);
+                return;
+            }
 
+            Node temp = Head;
+            int index = 0;
+            while(temp != null)
+            {
+                if(temp.value > value)
+                {
+                    AddAtIndex(value, index);
+                    return;
+                }
+
+                temp = temp.next;
+                index++;
+            }
+            AddAtTail(value);
+
+        }
+        
+        public void InsertInSortedLL2Pointer(int value)
+        {
+            // 2 pointer approach
+            //assuming there is a Sorted LL (not checking null)
+            Node temp = Head;
+            Node q = null;
+
+            if((temp != null && temp.value > value) || Head == null)
+            {
+                AddAtHead(value);
+                return;
+            }
+            while(temp != null && temp.value < value)
+            {
+                q = temp;
+                temp = temp.next;
+            }
+
+            Node newNode = new Node(value);
+            newNode.next = q.next;
+            q.next = newNode;
+        }
+        public void GetValueAtIndex(int index)
+        {
+            if(Head == null)
+            {
+                Console.WriteLine("No elements in LL");
+                return;
+            }
+            Node temp = Head;
+            for(int i = 0; i < index; i++)
+            {
+                if(temp == null)
+                {
+                    break;
+                }
+                temp = temp.next;
+            }
+            if(temp == null)
+            {
+                Console.WriteLine("Index out of Range");
+                return;
+            }
+            Console.WriteLine("Value at index {0} is {1}", index, temp.value);
+        }
     }
 }
