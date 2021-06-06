@@ -120,14 +120,15 @@ namespace DataStructuresAndAlgo.LinkedList
             else
             {
                 Node temp = Head;
-                for(int i = 0; i < index; i++)
+                for(int i = 0; i < index-1; i++)
                 {
-                    if (temp == null)
-                    {
-                        Console.WriteLine("Index greater than List size");
-                        return;
-                    }
                     temp = temp.next;
+                }
+
+                if (temp == null)
+                {
+                    Console.WriteLine("Index greater than List size");
+                    return;
                 }
                 Node newNode = new Node(value);
                 newNode.next = temp.next;
