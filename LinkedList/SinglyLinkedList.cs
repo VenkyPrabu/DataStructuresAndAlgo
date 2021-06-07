@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace DataStructuresAndAlgo.LinkedList
 {
@@ -18,9 +19,9 @@ namespace DataStructuresAndAlgo.LinkedList
         //13. Search - Done
         //14. Insert in a Sorted LL - Done
         //15. Insert in a Sorted LL - Two pointer Apporach - Done
-        //16. Check if LL is sorted
-        //17. Remove Duplicates from Sorted LL
-        //18. Reverse a Linked List
+        //16. Check if LL is sorted - Done
+        //17. Remove Duplicates from Sorted LL - Done
+        //18. Reverse a Linked List (with array and with pointers) - Done
         //19. Reverse a Linked List - Recursive
         //20. COncatenate
         //21. Merge sorted LL into a single Sorted LL - NOT IMPLEMENTED YET 
@@ -88,30 +89,64 @@ namespace DataStructuresAndAlgo.LinkedList
             // AddAtTail(100);
             // Display();
             // Count();
-            #endregion
             //AddAtTail(1);
-            AddAtTail(3);
-            AddAtTail(7);
-            AddAtTail(9);
-            AddAtTail(15);
-            AddAtTail(20);
-            InsertInSortedLL2Pointer(21);
-            InsertInSortedLL2Pointer(1);
-            InsertInSortedLL2Pointer(0);
+            // AddAtTail(3);
+            // AddAtTail(7);
+            // AddAtTail(9);
+            // AddAtTail(15);
+            // AddAtTail(20);
+            // InsertInSortedLL2Pointer(21);
+            // InsertInSortedLL2Pointer(1);
+            // InsertInSortedLL2Pointer(0);
             // DeleteAtHead();
             // DeleteAtLast();
             // Display();
             // DeleteAtIndex(5);
             // Display();
             // Search(7);
-             Display();
-            GetValueAtIndex(2);
-            GetValueAtIndex(4);
-            GetValueAtIndex(7);
+            //AddAtTail(-1);
+             //Display();
+            // GetValueAtIndex(2);
+            // GetValueAtIndex(4);
+            // GetValueAtIndex(7);
+            //isSorted();
+            //deleteDuplicateInSorted();
+            // ReverseLLWithArray();
+            // Display();
+            // ReverseLLWithPointers();
+            // Display();
+            // ReverseRecursive(null,Head);
+            // Display();
+            #endregion
+            
+
+            //SinglyLinkedList secondLL = new SinglyLinkedList();
+            // secondLL.AddAtTail(0);
+            // secondLL.AddAtTail(10);
+            // secondLL.AddAtTail(500);
+            //Concatenate(secondLL);
+            // secondLL.Display();
+
+            // Merge2SortedLL(secondLL);
+            // Display();
+
+
+            //Loop ( do not call Display() method if loop LL is being created)
+            AddAtTail(1);
+            AddAtTail(2);
+            AddAtTail(5);
+            AddAtTail(8);
+            AddAtTail(9);
+            AddAtTail(11);
+            //Display();
+            IsLoop();
+            
+
+
 
         }
 
-
+        #region methods
         public void AddAtHead(int value)
         {
             if(Head == null)
@@ -124,7 +159,7 @@ namespace DataStructuresAndAlgo.LinkedList
             newNode.next = Head;
             Head = newNode;
         }
-        public void AddAtTail(int value)
+        public void AddAtTail(int value, int index = -1)
         {
             if(Head == null)
             {
@@ -133,17 +168,31 @@ namespace DataStructuresAndAlgo.LinkedList
                 return;
             }
             //O(n) - without Tail
-            // Node temp = Head;
-            // while(temp.next != null)
-            // {
-            //     temp = temp.next;
-            // }
-            //temp.next = new Node(value);
+            Node temp = Head;
+            Node indexToLoop = null; // to setup a loop LL
+            int i = 0;// to setup a loop LL
+            while(temp.next != null)
+            {
+                if(i == index)// to setup a loop LL
+                {
+                    indexToLoop = temp;// to setup a loop LL
+                }
+                temp = temp.next;
+                i++;// to setup a loop LL
+            }
+
+            Node newNode = new Node(value);
+            temp.next = newNode;
+
+            if(indexToLoop != null)// to setup a loop LL
+            {
+                newNode.next = indexToLoop;// to setup a loop LL
+            }
 
             //O(1) - With Tail Node
-            Node newNode = new Node(value);
-            Tail.next = newNode;
-            Tail = newNode;
+            // Node newNode = new Node(value);
+            // Tail.next = newNode;
+            // Tail = newNode;
 
         }
         public void AddAtIndex(int value, int index)
@@ -240,6 +289,23 @@ namespace DataStructuresAndAlgo.LinkedList
                 return;
             }
             Node temp = Head;
+            while(temp != null)
+            {
+                Console.Write(temp.value + "->");
+                temp = temp.next;
+            }
+            Console.Write("null");
+            Console.WriteLine();
+        }
+
+        public void Display(Node node)
+        {
+            if(node == null)
+            {
+                Console.WriteLine("No elements to display");
+                return;
+            }
+            Node temp = node;
             while(temp != null)
             {
                 Console.Write(temp.value + "->");
@@ -472,6 +538,222 @@ namespace DataStructuresAndAlgo.LinkedList
                 return;
             }
             Console.WriteLine("Value at index {0} is {1}", index, temp.value);
+        }
+        #endregion
+        public void isSorted()
+        {
+            Node temp = Head;
+
+            if(Head == null)
+            {
+                Console.WriteLine("No elements");
+                return;
+            }
+            int x = int.MinValue;
+            while(temp != null)
+            {
+                if(temp.value < x)
+                {
+                    Console.WriteLine("NOT SORTED");
+                    return;
+                }
+                x = temp.value;
+                temp = temp.next;
+            }
+            Console.WriteLine("SORTED");
+
+        }
+    
+        public void deleteDuplicateInSorted()
+        {
+            if(Head == null || Head.next == null)
+            {
+                Console.WriteLine("Not enough elements to check duplicates");
+                return;
+            }
+
+            Node prev = Head;
+            Node curr = Head.next;
+
+            while(curr != null)
+            {
+                if(curr.value == prev.value)
+                {
+                    prev.next = curr.next;
+                    curr = curr.next;
+                }
+                else
+                {
+                    prev = curr;
+                    curr = curr.next;
+                }
+            }
+        }
+    
+        public void ReverseLLWithArray()
+        {
+            if(Head == null || Head.next == null)
+            {
+                Console.WriteLine("Not enough elements");
+                return;
+            }
+
+            List<int> list = new List<int>();
+
+            Node curr = Head;
+            
+            while(curr != null)
+            {
+                list.Add(curr.value);
+                curr = curr.next;
+            }
+
+            var a = list.ToArray();
+            curr = Head;
+
+            int i = list.Count;
+            while(curr != null)
+            {
+                curr.value = a[i-1];
+                curr = curr.next;
+                i--;
+            }
+        }
+
+        public void ReverseLLWithPointers()
+        {
+            if(Head == null || Head.next == null)
+            {
+                Console.WriteLine("Not enough elements");
+                return;
+            }
+
+            Node prevPrev = null;
+            Node prev = null;
+            Node curr = Head;
+
+            while(curr != null)
+            {
+                prevPrev = prev;
+                prev = curr;
+                curr = curr.next;
+                prev.next = prevPrev;
+            }
+            Head = prev;
+        }
+    
+        public void ReverseRecursive(Node prev, Node curr)
+        {
+            if(curr != null)
+            {
+                ReverseRecursive(curr, curr.next);
+                curr.next = prev;
+            }
+            else
+            {
+                Head = prev;
+            }
+        }
+
+        public void Concatenate(SinglyLinkedList secondll)
+        {
+            if(Head == null && secondll.Head == null)
+            {
+                return;
+            }
+
+            Node firstLLCurr =  Head;
+
+            while(firstLLCurr.next != null)
+            {
+                firstLLCurr = firstLLCurr.next;
+            }
+
+            firstLLCurr.next = secondll.Head;
+            secondll = null;
+        }
+    
+        public void Merge2SortedLL(SinglyLinkedList secondll)
+        {
+            if(Head == null && secondll.Head == null)
+            {
+                return;
+            }
+
+            Node mergedHead = null;
+            Node last = null;
+
+            Node firstCurr = Head;
+            Node SecondCurr = secondll.Head;
+
+            if(firstCurr.value < SecondCurr.value)
+            {
+                mergedHead = firstCurr;
+                last = firstCurr;
+                firstCurr = firstCurr.next;
+                last.next = null;
+            }
+            else
+            {
+                mergedHead = SecondCurr;
+                last = SecondCurr;
+                SecondCurr = SecondCurr.next;
+                last.next = null;
+            }
+
+            while(firstCurr != null && SecondCurr != null)
+            {
+                if(firstCurr.value < SecondCurr.value)
+                {
+                    last.next = firstCurr;
+                    last = firstCurr;
+                    firstCurr = firstCurr.next;
+                    last.next = null;
+                }
+                else
+                {
+                    last.next = SecondCurr;
+                    last = SecondCurr;
+                    SecondCurr = SecondCurr.next;
+                    last.next = null;
+                }
+            }
+
+            if(firstCurr != null)
+            {
+                last.next = firstCurr;
+            }
+            else if (SecondCurr != null)
+            {
+                last.next = SecondCurr;
+            }
+
+            Head = mergedHead;
+            secondll = null;
+            //Display(mergedHead);
+
+            
+        }
+    
+        public void IsLoop()
+        {
+            Node fast = Head;
+            Node slow = Head;
+
+            while(fast != null && fast.next != null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+
+                if(fast == slow)
+                {
+                    Console.WriteLine("Loop");
+                    return;
+                }
+            }
+
+            Console.WriteLine("Not a Loop");
+                    
         }
     }
 }
