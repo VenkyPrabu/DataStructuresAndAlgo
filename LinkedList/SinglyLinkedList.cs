@@ -130,16 +130,18 @@ namespace DataStructuresAndAlgo.LinkedList
             // Merge2SortedLL(secondLL);
             // Display();
 
-
-            //Loop ( do not call Display() method if loop LL is being created)
+            //to check LOOP
             AddAtTail(1);
             AddAtTail(2);
             AddAtTail(5);
             AddAtTail(8);
             AddAtTail(9);
-            AddAtTail(11);
-            //Display();
+            AddAtTailForLoop(11,0);// to enable the cirular or loop LL
+            DisplayCLL(Head);
+            Console.WriteLine("=========DisplayRecursive==========");
+            DisplayRecursive(Head);
             IsLoop();
+            
             
 
 
@@ -159,7 +161,7 @@ namespace DataStructuresAndAlgo.LinkedList
             newNode.next = Head;
             Head = newNode;
         }
-        public void AddAtTail(int value, int index = -1)
+        public void AddAtTail(int value)
         {
             if(Head == null)
             {
@@ -168,31 +170,18 @@ namespace DataStructuresAndAlgo.LinkedList
                 return;
             }
             //O(n) - without Tail
-            Node temp = Head;
-            Node indexToLoop = null; // to setup a loop LL
-            int i = 0;// to setup a loop LL
-            while(temp.next != null)
-            {
-                if(i == index)// to setup a loop LL
-                {
-                    indexToLoop = temp;// to setup a loop LL
-                }
-                temp = temp.next;
-                i++;// to setup a loop LL
-            }
+            // Node temp = Head;
+            // while(temp.next != null)
+            // {
+            //     temp = temp.next;
+            // }
 
-            Node newNode = new Node(value);
-            temp.next = newNode;
-
-            if(indexToLoop != null)// to setup a loop LL
-            {
-                newNode.next = indexToLoop;// to setup a loop LL
-            }
-
-            //O(1) - With Tail Node
             // Node newNode = new Node(value);
-            // Tail.next = newNode;
-            // Tail = newNode;
+            // temp.next = newNode;
+            //O(1) - With Tail Node
+            Node newNode = new Node(value);
+            Tail.next = newNode;
+            Tail = newNode;
 
         }
         public void AddAtIndex(int value, int index)
@@ -298,22 +287,6 @@ namespace DataStructuresAndAlgo.LinkedList
             Console.WriteLine();
         }
 
-        public void Display(Node node)
-        {
-            if(node == null)
-            {
-                Console.WriteLine("No elements to display");
-                return;
-            }
-            Node temp = node;
-            while(temp != null)
-            {
-                Console.Write(temp.value + "->");
-                temp = temp.next;
-            }
-            Console.Write("null");
-            Console.WriteLine();
-        }
         public void DisplayRecursive(Node node)
         {
             if(node == Head && node == null)
@@ -729,17 +702,69 @@ namespace DataStructuresAndAlgo.LinkedList
             }
 
             Head = mergedHead;
-            secondll = null;
-            //Display(mergedHead);
-
-            
+            secondll = null;           
         }
     
+         public void AddAtTailForLoop(int value, int index = -1)
+        {
+            if(Head == null)
+            {
+                Head = new Node(value);
+                Tail = Head;
+                return;
+            }
+            //O(n) - without Tail
+            Node temp = Head;
+            Node indexToLoop = null; // to setup a loop LL
+            int i = 0;// to setup a loop LL
+            while(temp.next != null)
+            {
+                if(i == index)// to setup a loop LL
+                {
+                    indexToLoop = temp;// to setup a loop LL
+                }
+                temp = temp.next;
+                i++;// to setup a loop LL
+            }
+
+            Node newNode = new Node(value);
+            temp.next = newNode;
+
+            if(indexToLoop != null)// to setup a loop LL
+            {
+                newNode.next = indexToLoop;// to setup a loop LL
+            }
+
+            //O(1) - With Tail Node
+            // Node newNode = new Node(value);
+            // Tail.next = newNode;
+            // Tail = newNode;
+
+        }
+
+        public void DisplayCLL(Node head)
+        {
+            if(head == null)
+            {
+                Console.WriteLine("No elements to display");
+                return;
+            }
+            Node temp = head;
+            do
+            {
+                Console.Write(temp.value + "-->");
+                temp = temp.next;
+            }
+            while(temp != head);
+            Console.Write("Head [" + Head.value + "]");
+            Console.WriteLine();
+        }
+
         public void IsLoop()
         {
             Node fast = Head;
             Node slow = Head;
-
+            Console.WriteLine("");
             while(fast != null && fast.next != null)
             {
                 slow = slow.next;
