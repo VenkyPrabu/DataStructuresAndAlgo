@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DataStructuresAndAlgo.Array;
 using DataStructuresAndAlgo.LinkedList;
+using DataStructuresAndAlgo.Queue;
 using DataStructuresAndAlgo.Stack;
 
 namespace DataStructuresAndAlgo
@@ -25,8 +26,17 @@ namespace DataStructuresAndAlgo
             // StackArray sa = new StackArray();
             // sa.main();
 
-            StackLinkedList sll = new StackLinkedList();
-            sll.main();
+            // StackLinkedList sll = new StackLinkedList();
+            // sll.main();
+
+            // QueueArray qa = new QueueArray();
+            // qa.main();
+
+            // QueueCircular qc = new QueueCircular();
+            // qc.main();
+
+            QueueLinkedList qll = new QueueLinkedList();
+            qll.main();
             
 
         }

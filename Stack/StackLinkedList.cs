@@ -16,6 +16,8 @@ namespace DataStructuresAndAlgo.Stack
         }
 
     }
+
+    //todo: Infix to Postfix 
     
     public class StackLinkedList
     {
@@ -44,6 +46,9 @@ namespace DataStructuresAndAlgo.Stack
             Console.WriteLine(isBracketsBalance("{}()[]"));
             Console.WriteLine(isBracketsBalance("{[()]}"));
             Console.WriteLine(isBracketsBalance("{[({{{]})})]}"));
+            Console.WriteLine(isBracketsBalance("{([a+b]}*[c-d])/e}"));
+
+            
         }
 
         public void push(char value)
