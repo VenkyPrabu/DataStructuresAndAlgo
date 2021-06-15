@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using DataStructuresAndAlgo.Array;
+using DataStructuresAndAlgo.AVL;
+using DataStructuresAndAlgo.BinaryTree;
+using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Queue;
 using DataStructuresAndAlgo.Stack;
@@ -35,8 +38,20 @@ namespace DataStructuresAndAlgo
             // QueueCircular qc = new QueueCircular();
             // qc.main();
 
-            QueueLinkedList qll = new QueueLinkedList();
-            qll.main();
+            // QueueLinkedList qll = new QueueLinkedList();
+            // qll.main();
+
+            // DataStructuresAndAlgo.BinaryTree.BinaryTree bt = new DataStructuresAndAlgo.BinaryTree.BinaryTree();
+            // bt.main();
+
+            // BinarySearchTree bst = new BinarySearchTree();
+            // bst.main();
+
+            // AVLTree avl = new AVLTree();
+            // avl.main();
+
+            BinaryHeap h = new BinaryHeap(7);
+            h.main();
             
 
         }
