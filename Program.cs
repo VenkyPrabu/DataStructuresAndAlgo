@@ -6,6 +6,10 @@ using DataStructuresAndAlgo.BinaryTree;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Queue;
+using DataStructuresAndAlgo.Sorting.BubbleSortAlgorithm;
+using DataStructuresAndAlgo.Sorting.InsertionSortAlgorithm;
+using DataStructuresAndAlgo.Sorting.QuickSortAlgorithm;
+using DataStructuresAndAlgo.Sorting.SelectionSortAlgorithm;
 using DataStructuresAndAlgo.Stack;
 
 namespace DataStructuresAndAlgo
@@ -50,8 +54,20 @@ namespace DataStructuresAndAlgo
             // AVLTree avl = new AVLTree();
             // avl.main();
 
-            BinaryHeap h = new BinaryHeap(7);
-            h.main();
+            // BinaryHeap h = new BinaryHeap(7);
+            // h.main();
+
+            // BubbleSort bs = new BubbleSort();
+            // bs.main();
+
+            // InsertionSort ins = new InsertionSort();
+            // ins.main();
+
+            // SelectionSort ss = new SelectionSort();
+            // ss.main();
+
+            QuickSort qs = new QuickSort();
+            qs.main();
             
 
         }
