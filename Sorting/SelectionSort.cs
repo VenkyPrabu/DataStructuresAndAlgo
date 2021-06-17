@@ -1,6 +1,6 @@
 using System;
 
-namespace DataStructuresAndAlgo.Sorting.SelectionSortAlgorithm
+namespace DataStructuresAndAlgo.Sorting
 {
     public class SelectionSort
     {

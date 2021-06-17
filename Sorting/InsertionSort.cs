@@ -1,6 +1,6 @@
 using System;
 
-namespace DataStructuresAndAlgo.Sorting.InsertionSortAlgorithm
+namespace DataStructuresAndAlgo.Sorting
 {
     public class InsertionSort
     {

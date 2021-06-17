@@ -1,6 +1,6 @@
 using System;
 
-namespace DataStructuresAndAlgo.Sorting.BubbleSortAlgorithm
+namespace DataStructuresAndAlgo.Sorting
 {
     public class BubbleSort
     {

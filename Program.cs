@@ -6,10 +6,7 @@ using DataStructuresAndAlgo.BinaryTree;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Queue;
-using DataStructuresAndAlgo.Sorting.BubbleSortAlgorithm;
-using DataStructuresAndAlgo.Sorting.InsertionSortAlgorithm;
-using DataStructuresAndAlgo.Sorting.QuickSortAlgorithm;
-using DataStructuresAndAlgo.Sorting.SelectionSortAlgorithm;
+using DataStructuresAndAlgo.Sorting;
 using DataStructuresAndAlgo.Stack;
 
 namespace DataStructuresAndAlgo
@@ -66,8 +63,11 @@ namespace DataStructuresAndAlgo
             // SelectionSort ss = new SelectionSort();
             // ss.main();
 
-            QuickSort qs = new QuickSort();
-            qs.main();
+            // QuickSort qs = new QuickSort();
+            // qs.main();
+
+            MergeSort ms = new MergeSort();
+            ms.main();
             
 
         }

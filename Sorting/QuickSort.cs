@@ -1,6 +1,6 @@
 using System;
 
-namespace DataStructuresAndAlgo.Sorting.QuickSortAlgorithm
+namespace DataStructuresAndAlgo.Sorting
 {
     public class QuickSort
     {
