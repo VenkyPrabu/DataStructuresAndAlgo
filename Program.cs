@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using DataStructuresAndAlgo.Array;
 using DataStructuresAndAlgo.AVL;
 using DataStructuresAndAlgo.BinaryTree;
+using DataStructuresAndAlgo.Graph;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
+using DataStructuresAndAlgo.Matrix;
 using DataStructuresAndAlgo.Queue;
 using DataStructuresAndAlgo.Sorting;
 using DataStructuresAndAlgo.Stack;
@@ -66,8 +68,35 @@ namespace DataStructuresAndAlgo
             // QuickSort qs = new QuickSort();
             // qs.main();
 
-            MergeSort ms = new MergeSort();
-            ms.main();
+            // MergeSort ms = new MergeSort();
+            // ms.main();
+
+            // BFSDFS bFS = new BFSDFS();
+            // bFS.main();
+
+            // Diagonal d = new Diagonal();
+            // d.main();
+
+            // RootingTree rt = new RootingTree();
+            // rt.main();
+
+            // TreeCenter tc = new TreeCenter();
+            // tc.main();
+
+            // IsomorphicTree it = new IsomorphicTree();
+            // it.Isomorphic_Main();
+
+            // TopSort ts = new TopSort();
+            // ts.TopSort_Main();
+            
+            // TopSortKhan TK = new TopSortKhan();
+            // TK.TopSortKahn_Main();
+
+            ShortestPath sp = new ShortestPath();
+            sp.main();
+            
+
+
             
 
         }
