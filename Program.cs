@@ -4,12 +4,14 @@ using DataStructuresAndAlgo.Array;
 using DataStructuresAndAlgo.AVL;
 using DataStructuresAndAlgo.BinaryTree;
 using DataStructuresAndAlgo.Graph;
+using DataStructuresAndAlgo.Hashing;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Matrix;
 using DataStructuresAndAlgo.Queue;
 using DataStructuresAndAlgo.Sorting;
 using DataStructuresAndAlgo.Stack;
+using static DataStructuresAndAlgo.Hashing.Chaining;
 
 namespace DataStructuresAndAlgo
 {
@@ -92,8 +94,11 @@ namespace DataStructuresAndAlgo
             // TopSortKhan TK = new TopSortKhan();
             // TK.TopSortKahn_Main();
 
-            ShortestPath sp = new ShortestPath();
-            sp.main();
+            // ShortestPath sp = new ShortestPath();
+            // sp.main();
+
+            HashTable ht  = new HashTable(10);
+            ht.main();
             
 
 
