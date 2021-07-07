@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataStructuresAndAlgo.Algorithms;
 using DataStructuresAndAlgo.Array;
 using DataStructuresAndAlgo.AVL;
 using DataStructuresAndAlgo.BinaryTree;
@@ -8,6 +9,7 @@ using DataStructuresAndAlgo.Hashing;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Matrix;
+using DataStructuresAndAlgo.PriorityQueue;
 using DataStructuresAndAlgo.Queue;
 using DataStructuresAndAlgo.Sorting;
 using DataStructuresAndAlgo.Stack;
@@ -97,9 +99,29 @@ namespace DataStructuresAndAlgo
             // ShortestPath sp = new ShortestPath();
             // sp.main();
 
-            HashTable ht  = new HashTable(10);
-            ht.main();
+            // HashTable ht  = new HashTable(10);
+            // ht.main();
+
+            // Knapsack ks = new Knapsack();
+            // ks.main();
+
+            // Kruskal ks = new Kruskal();
+            // ks.main();
+
+            // PriorityQueue<int> pq = new PriorityQueue<int>();
+            // pq.main();
+
+            // BellmanFord bf = new BellmanFord();
+            // bf.main();
+
+            // MinHeap mh = new MinHeap();
+            // mh.main();
             
+            // HeapSort hs = new HeapSort();
+            // hs.main();
+
+            BinarySearch bs = new BinarySearch();
+            bs.main();
 
 
             
