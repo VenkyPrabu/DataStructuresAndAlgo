@@ -135,9 +135,14 @@ namespace DataStructuresAndAlgo
             // MultiStageGraph msg = new MultiStageGraph();
             // msg.main();
 
-            AllPairShortestPath a = new AllPairShortestPath();
-            a.main();
+            // AllPairShortestPath a = new AllPairShortestPath();
+            // a.main();
 
+            // MultiStageGrapgAB a = new MultiStageGrapgAB();
+            // a.main();
+
+            MatrixChainMultiplication mm = new MatrixChainMultiplication();
+            mm.main();
 
             
 

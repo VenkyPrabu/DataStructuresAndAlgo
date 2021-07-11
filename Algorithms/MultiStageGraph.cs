@@ -5,8 +5,9 @@ namespace DataStructuresAndAlgo.Algorithms
     //https://www.geeksforgeeks.org/multistage-graph-shortest-path/
     public class MultiStageGraph
     {
-        public int N = 8;
+        public static int N = 8;
         public int INF = int.MaxValue;
+        
         public void main()
         {
             int[,] graph = new int[,]

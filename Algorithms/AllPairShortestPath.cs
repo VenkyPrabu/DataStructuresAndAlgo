@@ -5,7 +5,7 @@ namespace DataStructuresAndAlgo.Algorithms
     //https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
     public class AllPairShortestPath
     {
-        public int INF = int.MaxValue, V = 4;
+        public int INF = 99999, V = 4;
         public void main()
         {
             int[,] graph = { {0, 5, INF, 10},
