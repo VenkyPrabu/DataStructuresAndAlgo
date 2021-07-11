@@ -120,8 +120,23 @@ namespace DataStructuresAndAlgo
             // HeapSort hs = new HeapSort();
             // hs.main();
 
-            BinarySearch bs = new BinarySearch();
-            bs.main();
+            // BinarySearch bs = new BinarySearch();
+            // bs.main();
+
+            // MatrixMultiplication mm = new MatrixMultiplication();
+            // mm.main();
+
+            // JobSequencing js = new JobSequencing();
+            // js.main();
+
+            // Fibonacci FB = new Fibonacci();
+            // FB.main();
+
+            // MultiStageGraph msg = new MultiStageGraph();
+            // msg.main();
+
+            AllPairShortestPath a = new AllPairShortestPath();
+            a.main();
 
 
             
