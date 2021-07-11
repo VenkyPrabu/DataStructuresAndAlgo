@@ -141,8 +141,11 @@ namespace DataStructuresAndAlgo
             // MultiStageGrapgAB a = new MultiStageGrapgAB();
             // a.main();
 
-            MatrixChainMultiplication mm = new MatrixChainMultiplication();
-            mm.main();
+            // MatrixChainMultiplication mm = new MatrixChainMultiplication();
+            // mm.main();
+
+            NQueensProblem nq = new NQueensProblem();
+            nq.main();
 
             
 
