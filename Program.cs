@@ -21,6 +21,8 @@ namespace DataStructuresAndAlgo
     {
         static void Main(string[] args)
         {
+
+            #region calls
             // ArrayImplementation ai = new ArrayImplementation();
             // ai.main();
 
@@ -144,8 +146,17 @@ namespace DataStructuresAndAlgo
             // MatrixChainMultiplication mm = new MatrixChainMultiplication();
             // mm.main();
 
-            NQueensProblem nq = new NQueensProblem();
-            nq.main();
+            // NQueensProblem nq = new NQueensProblem();
+            // nq.main();
+
+            #endregion
+            
+            
+            // SubsetSumProblem ss = new SubsetSumProblem();
+            // ss.main();
+
+            GraphColoringProblem gs = new GraphColoringProblem();
+            gs.main();
 
             
 
