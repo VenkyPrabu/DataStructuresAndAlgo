@@ -3,7 +3,7 @@ namespace DataStructuresAndAlgo.Practice.LeetCode
     public class LinkedListCycle
     {
 
-
+        //https://leetcode.com/problems/linked-list-cycle/
         public bool HasCycle(ListNode head)
         {
             if(head == null)

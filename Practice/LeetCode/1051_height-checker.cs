@@ -4,7 +4,7 @@ namespace DataStructuresAndAlgo.Practice.LeetCode
 {
     public class heightchecker
     {
-        //https://leetcode.com/problems/1051_height-checker/
+        //https://leetcode.com/problems/height-checker/
 
         public void main()
         {

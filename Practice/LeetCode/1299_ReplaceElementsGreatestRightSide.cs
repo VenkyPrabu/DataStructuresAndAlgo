@@ -12,7 +12,6 @@ namespace DataStructuresAndAlgo.Practice.LeetCode
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
             {
-
                 int max = 0;
                 for (int j = i + 1; j < n; j++)
                 {
