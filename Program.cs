@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DataStructuresAndAlgo.Algorithms;
+//using DataStructuresAndAlgo.Algorithms;
 using DataStructuresAndAlgo.Array;
 using DataStructuresAndAlgo.AVL;
 using DataStructuresAndAlgo.BinaryTree;
@@ -9,9 +9,10 @@ using DataStructuresAndAlgo.Hashing;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Matrix;
+using DataStructuresAndAlgo.Practice.Sorting;
 using DataStructuresAndAlgo.PriorityQueue;
 using DataStructuresAndAlgo.Queue;
-using DataStructuresAndAlgo.Sorting;
+//using DataStructuresAndAlgo.Sorting;
 using DataStructuresAndAlgo.Stack;
 using static DataStructuresAndAlgo.Hashing.Chaining;
 
@@ -155,8 +156,14 @@ namespace DataStructuresAndAlgo
             // SubsetSumProblem ss = new SubsetSumProblem();
             // ss.main();
 
-            GraphColoringProblem gs = new GraphColoringProblem();
-            gs.main();
+            // GraphColoringProblem gs = new GraphColoringProblem();
+            // gs.main();
+
+            // QuickSort qs = new QuickSort();
+            // qs.main();
+
+            MergeSort m = new MergeSort();
+            m.main();
 
             
 
