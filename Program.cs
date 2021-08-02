@@ -162,9 +162,11 @@ namespace DataStructuresAndAlgo
             // QuickSort qs = new QuickSort();
             // qs.main();
 
-            MergeSort m = new MergeSort();
-            m.main();
+            // MergeSort m = new MergeSort();
+            // m.main();
 
+            HeapSort h = new HeapSort();
+            h.main();
             
 
         }
