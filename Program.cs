@@ -9,6 +9,7 @@ using DataStructuresAndAlgo.Hashing;
 using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Matrix;
+using DataStructuresAndAlgo.Practice.LeetCode;
 using DataStructuresAndAlgo.Practice.Sorting;
 using DataStructuresAndAlgo.PriorityQueue;
 using DataStructuresAndAlgo.Queue;
@@ -165,8 +166,11 @@ namespace DataStructuresAndAlgo
             // MergeSort m = new MergeSort();
             // m.main();
 
-            HeapSort h = new HeapSort();
-            h.main();
+            // HeapSort h = new HeapSort();
+            // h.main();
+
+            TopKFrequentElements tk = new TopKFrequentElements();
+            tk.main();
             
 
         }

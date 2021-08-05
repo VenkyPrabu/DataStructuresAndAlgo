@@ -6,7 +6,7 @@ namespace DataStructuresAndAlgo.Practice.Sorting
     {
         public void main()
         {
-            int[] a = new int[10] { 3, 7, 9, 10, 6, 5, 12, 4, 11, 2};
+            int[] a = new int[10] { 3, 7, 9, 10, 6, 5, 12, 4, 11, 2 };
             Print(a);
             sort(a);
             Print(a);
@@ -35,29 +35,37 @@ namespace DataStructuresAndAlgo.Practice.Sorting
         {
             if (l < h)
             {
-                //FOLLOWING LOMATOS PARTITIONING
-                //Green(bigger) and Yellow(smaller) 
-                int rIndex = new Random().Next(l, h);
-                swap(ref arr[l], ref arr[rIndex]);
-                int pivot = arr[l];
-
-                int smallPointer = l;
-                int bigPointer = l;
-
-                for (bigPointer = l + 1; bigPointer <= h; bigPointer++)
-                {
-                    if (arr[bigPointer] < pivot)
-                    {
-                        smallPointer++;
-                        swap(ref arr[smallPointer], ref arr[bigPointer]);
-                    }
-                }
-
-                swap(ref arr[l], ref arr[smallPointer]);
-
-                QSort(arr, l, smallPointer - 1);
-                QSort(arr, smallPointer + 1, h);
+                int pivot_Index = Partition(arr, l, h);
+                QSort(arr, l, pivot_Index - 1);
+                QSort(arr, pivot_Index + 1, h);
             }
+        }
+
+        public int Partition(int[] arr, int l, int h)
+        {
+            //FOLLOWING LOMATOS PARTITIONING
+            //Green(bigger) and Yellow(smaller) 
+            int rIndex = new Random().Next(l, h);
+            int pivot = arr[rIndex];
+
+            swap(ref arr[h], ref arr[rIndex]);//swap to the right most index
+
+            int smallPointer = l;
+            int bigPointer = l;
+
+            for (bigPointer = l; bigPointer <= h; bigPointer++)
+            {
+                if (arr[bigPointer] < pivot)
+                {
+                    swap(ref arr[smallPointer], ref arr[bigPointer]);
+                    smallPointer++;//if swapping the pivot element to the right this should be after the swap in above line.
+
+                }
+            }
+
+            swap(ref arr[h], ref arr[smallPointer]);
+
+            return smallPointer;
         }
 
         public void swap(ref int x, ref int y)
