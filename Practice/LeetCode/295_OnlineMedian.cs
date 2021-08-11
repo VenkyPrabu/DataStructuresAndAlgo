@@ -24,6 +24,7 @@ namespace DataStructuresAndAlgo.Practice.LeetCode
             List<int> op = new List<int>();
             List<int> ss = new List<int>();
 
+            
             ss.Add(stream[0]);
             op.Add(stream[0]);
 
@@ -165,7 +166,7 @@ namespace DataStructuresAndAlgo.Practice.LeetCode
                     if (Compare(currIdx, parentIdx))
                     {
                         swap(currIdx, parentIdx);
-                        currIdx++;
+                        currIdx = parentIdx;
                     }
                     else
                     {

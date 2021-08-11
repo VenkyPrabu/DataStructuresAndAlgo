@@ -10,6 +10,7 @@ using DataStructuresAndAlgo.Heap;
 using DataStructuresAndAlgo.LinkedList;
 using DataStructuresAndAlgo.Matrix;
 using DataStructuresAndAlgo.Practice.LeetCode;
+using DataStructuresAndAlgo.Practice.LeetCode.Recursion;
 using DataStructuresAndAlgo.Practice.Sorting;
 using DataStructuresAndAlgo.PriorityQueue;
 using DataStructuresAndAlgo.Queue;
@@ -175,8 +176,24 @@ namespace DataStructuresAndAlgo
             // OnlineMedian om = new OnlineMedian();
             // om.main();
 
-           _KthLargestInAStream k = new _KthLargestInAStream();
-           k.main();
+        //    _KthLargestInAStream k = new _KthLargestInAStream();
+        //    k.main();
+
+            // LetterCasePermutation lc = new LetterCasePermutation();
+            // lc.main();
+
+            // AllSubsets a = new AllSubsets();
+            // a.main();
+
+            // AllSubsetWithoutDuplicate aw = new AllSubsetWithoutDuplicate();
+            // aw.main();
+
+            // AllPermutations ap = new AllPermutations();
+            // ap.main();
+
+            FindCombinationsForKSize fc = new FindCombinationsForKSize();
+            fc.main();
+
 
             
 
