@@ -40,7 +40,6 @@ namespace DataStructuresAndAlgo.Practice.LeetCode
                 }
             }
 
-
             int n = count.Count;
             unique = new int[n];
             int j = 0;

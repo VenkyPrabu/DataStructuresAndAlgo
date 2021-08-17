@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataStructuresAndAlgo.Algorithms;
 //using DataStructuresAndAlgo.Algorithms;
 using DataStructuresAndAlgo.Array;
 using DataStructuresAndAlgo.AVL;
@@ -149,8 +150,8 @@ namespace DataStructuresAndAlgo
             // MatrixChainMultiplication mm = new MatrixChainMultiplication();
             // mm.main();
 
-            // NQueensProblem nq = new NQueensProblem();
-            // nq.main();
+            NQueensProblem nq = new NQueensProblem();
+            nq.main();
 
             #endregion
             
@@ -191,8 +192,11 @@ namespace DataStructuresAndAlgo
             // AllPermutations ap = new AllPermutations();
             // ap.main();
 
-            FindCombinationsForKSize fc = new FindCombinationsForKSize();
-            fc.main();
+            // FindCombinationsForKSize fc = new FindCombinationsForKSize();
+            // fc.main();
+
+            // PalindromeOfGivenString p = new PalindromeOfGivenString();
+            // p.main();
 
 
             

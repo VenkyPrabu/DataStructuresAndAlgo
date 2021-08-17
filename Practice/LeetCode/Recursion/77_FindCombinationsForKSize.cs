@@ -14,7 +14,7 @@ namespace DataStructuresAndAlgo.Practice.LeetCode.Recursion
             var results = new List<List<int>>();
             var combinations = new List<int>();
             //helper(results, combinations, n, k, 1);
-
+            
             combind_helper(n,k,1, new List<int>(), results);
             return results;
 
@@ -28,6 +28,8 @@ namespace DataStructuresAndAlgo.Practice.LeetCode.Recursion
                 results.Add(new List<int>(combinations));
                 return;
             }
+
+            
 
             for (int i = index; i <= n; i++)
             {

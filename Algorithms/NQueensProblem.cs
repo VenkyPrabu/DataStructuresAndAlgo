@@ -5,6 +5,7 @@ namespace DataStructuresAndAlgo.Algorithms
 {
     //https://www.youtube.com/watch?v=xouin83ebxE&ab_channel=TusharRoy-CodingMadeSimple
     //https://github.com/mission-peace/interview/blob/master/src/com/interview/recursion/NQueenProblem.java
+    //N-Queen and Sudoku : https://www.youtube.com/watch?v=A80YzvNwqXA&ab_channel=freeCodeCamp.org
     public class Position
     {
         public int row;
