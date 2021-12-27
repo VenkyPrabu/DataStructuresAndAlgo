@@ -11,13 +11,13 @@ namespace DataStructuresAndAlgo.Sorting
             Bubble(a);
             Print(a);
         }
-
+        //https://www.youtube.com/watch?v=p__ETf2CKY4
         public void Bubble(int[] a)
         {
             int n = a.Length;
             for (int i = 0; i < n - 1; i++)
             {
-                bool flag = false;
+                bool flag = false;// to make bubble sort adaptive
                 for(int j = 0; j < n-1-i; j++)
                 {
                     if(a[j] > a[j+1])

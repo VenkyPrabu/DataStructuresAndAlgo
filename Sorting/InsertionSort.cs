@@ -23,13 +23,14 @@ namespace DataStructuresAndAlgo.Sorting
             Console.WriteLine();
         }
 
+        //https://www.youtube.com/watch?v=yCxV0kBpA6M       
         public void InsertSort(int[] a)
         {
             int n = a.Length;
             
             for(int i = 1; i < n ; i++)
             {
-                int x = a[i];
+                int x = a[i];    
                 int j = i-1;
 
                 while(j > -1 && a[j] > x)

@@ -25,8 +25,15 @@ namespace DataStructuresAndAlgo
     {
         static void Main(string[] args)
         {
+            var a = new int[]{1,2,3,2,1};
+            var b = new int[]{3,2,1,4,7};
 
+            MaximumLengthofRepeatedSubarray.maxSubArray(a,b);
+            //var s = AddStrings.Add2String("11","123");
             #region calls
+           
+            //OutputContestMatches.findContestMatch(4);
+
             // ArrayImplementation ai = new ArrayImplementation();
             // ai.main();
 
@@ -150,8 +157,8 @@ namespace DataStructuresAndAlgo
             // MatrixChainMultiplication mm = new MatrixChainMultiplication();
             // mm.main();
 
-            NQueensProblem nq = new NQueensProblem();
-            nq.main();
+            // NQueensProblem nq = new NQueensProblem();
+            // nq.main();
 
             #endregion
             

@@ -73,7 +73,7 @@ namespace DataStructuresAndAlgo.Practice.LeetCode.Trees
                 //for zigzag [Variation 2 - Zigzag]
                 //flip = !flip;
             }
-            return new result;
+            return result;
         }
     }
 }

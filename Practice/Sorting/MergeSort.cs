@@ -35,6 +35,7 @@ namespace DataStructuresAndAlgo.Practice.Sorting
             int k = 0;
             int[] aux = new int[h-l+1];
 
+        
             while (i <= m && j <= h)
             {
                 if (arr[i] <= arr[j])
